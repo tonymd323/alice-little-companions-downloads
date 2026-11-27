@@ -1,9 +1,9 @@
 {
   "schema": 2,
   "packageName": "local.family.alice_companions.adventure",
-  "version": "0.25.1",
-  "versionCode": 48,
-  "sizeBytes": 208532639,
-  "sha256": "d875e663ff32b1c30c55970cda6dde452dcfc8f4855000e9712628805c924a3f",
-  "url": "https://github.com/tonymd323/alice-little-companions-downloads/releases/download/adventure-v0.25.1+48/alice-adventure-0.25.1+48-android.apk"
+  "version": "0.26.0",
+  "versionCode": 50,
+  "sizeBytes": 208510483,
+  "sha256": "f1c5ae5fc565d93ac5c33fe5e55c7716ebec8b0cba6ab5f43d4135c2fbc6339e",
+  "url": "https://github.com/tonymd323/alice-little-companions-downloads/releases/download/adventure-v0.26.0+50/alice-adventure-0.26.0+50-android.apk"
 }
