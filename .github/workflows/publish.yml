@@ -1,0 +1,26 @@
+name: Publish adventure build 50
+on:
+  push:
+    branches: [codex/stage-adventure-50]
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_REPO: tonymd323/alice-little-companions-downloads
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Verify and publish the APK and checksum
+        run: |
+          set -euo pipefail
+          git init -q release-assets
+          cd release-assets
+          git fetch -q --depth=1 "https://github.com/$GH_REPO.git" "$GITHUB_SHA"
+          git checkout -q --detach FETCH_HEAD
+          apk=alice-adventure-0.26.0+50-android.apk
+          cat asset/part-* > "$apk"
+          sha256sum --check SHA256SUMS
+          gh release create 'adventure-v0.26.0+50' "$apk" SHA256SUMS \
+            --verify-tag --prerelease --title '小小银杏镇 · 0.26.0（50 号）' --notes-file notes.md
